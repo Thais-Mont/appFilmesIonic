@@ -1,17 +1,96 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+  <ion-toolbar color="dark">
+    <ion-title> Filmes </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" color="light">
+  <ion-searchbar placeholder="Pesquisar Filme"></ion-searchbar>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list>
+
+    <ion-item-sliding>
+      <ion-item lines="full">
+        <ion-thumbnail slot="start">
+          <img
+            src="https://www.themoviedb.org/t/p/w1280/u9QD9ddSVeYJABMSqBwfqe0NmsJ.jpg"
+          />
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>RRR (2022)</h1>
+            <p>25/03/2022 (IN)
+              - 3h 2m</p>
+            <p>Ação, Drama, História
+            </p>
+          </div>
+        </ion-label>
+        <ion-chip color="success" outline>
+          <ion-label>79%</ion-label>
+        </ion-chip>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option>
+          <ion-icon slot="icon-only" name="star" (click)="exibirAlertaFavorito()"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+    
+    <ion-item-sliding>
+      <ion-item lines="full">
+        <ion-thumbnail slot="start">
+          <img
+            src="https://www.themoviedb.org/t/p/w1280/sjnijtgU3Khzou1S9412V30pP7L.jpg"
+          />
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>A Queda (2022)</h1>
+            <p>29/09/2022 (BR)
+              - 1h 47m</p>
+            <p>Thriller
+            </p>
+          </div>
+        </ion-label>
+        <ion-chip color="success" outline>
+          <ion-label>74%</ion-label>
+        </ion-chip>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="exibirAlertaFavorito()">
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item lines="full">
+        <ion-thumbnail slot="start">
+          <img
+            src="https://www.themoviedb.org/t/p/w1280/crnUUp1cyqwR9NeGhdt0mMQNN0Y.jpg"
+          />
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>A Fera (2022)</h1>
+            <p>11/08/2022 (BR)
+
+              - 1h 33m</p>
+            <p>Thriller, Terror
+            </p>
+          </div>
+        </ion-label>
+        <ion-chip color="success" outline>
+          <ion-label>76%</ion-label>
+        </ion-chip>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="exibirAlertaFavorito()">
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
 </ion-content>

@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="dark">
-    <ion-title> Filmes </ion-title>
+    <ion-title> {{titulo}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,36 +8,32 @@
   <ion-searchbar placeholder="Pesquisar Filme"></ion-searchbar>
 
   <ion-list>
-
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let filme of listaFilmes">
       <ion-item lines="full">
         <ion-thumbnail slot="start">
-          <img
-            src="https://www.themoviedb.org/t/p/w1280/u9QD9ddSVeYJABMSqBwfqe0NmsJ.jpg"
-          />
+          <img [src]="filme.cartaz" />
         </ion-thumbnail>
         <ion-label class="ion-text-wrap">
           <div>
-            <h1>RRR (2022)</h1>
-            <p>25/03/2022 (IN)
-              - 3h 2m</p>
-            <p>Ação, Drama, História
-            </p>
+            <h1>{{filme.nome}}</h1>
+            <p>{{filme.lancamento}} - {{filme.duracao}}</p>
+            <ion-badge color="light" *ngFor="let genero of filme.generos"
+              >{{genero}}</ion-badge
+            >
           </div>
         </ion-label>
         <ion-chip color="success" outline>
-          <ion-label>79%</ion-label>
+          <ion-label>{{filme.classificacao}}%</ion-label>
         </ion-chip>
       </ion-item>
       <ion-item-options side="end">
-        <ion-item-option>
-          <ion-icon slot="icon-only" name="star" (click)="exibirAlertaFavorito()"></ion-icon>
+        <ion-item-option color="laranja" (click)="exibirAlertaFavorito()">
+          <ion-icon slot="icon-only" name="star"></ion-icon>
         </ion-item-option>
       </ion-item-options>
-
     </ion-item-sliding>
-    
-    <ion-item-sliding>
+
+    <!-- <ion-item-sliding>
       <ion-item lines="full">
         <ion-thumbnail slot="start">
           <img
@@ -58,7 +54,7 @@
         </ion-chip>
       </ion-item>
       <ion-item-options side="end">
-        <ion-item-option (click)="exibirAlertaFavorito()">
+        <ion-item-option color="laranja" (click)="exibirAlertaFavorito()">
           <ion-icon slot="icon-only" name="star"></ion-icon>
         </ion-item-option>
       </ion-item-options>
@@ -86,11 +82,10 @@
         </ion-chip>
       </ion-item>
       <ion-item-options side="end">
-        <ion-item-option (click)="exibirAlertaFavorito()">
+        <ion-item-option color="laranja" (click)="exibirAlertaFavorito()">
           <ion-icon slot="icon-only" name="star"></ion-icon>
         </ion-item-option>
       </ion-item-options>
-    </ion-item-sliding>
-
+    </ion-item-sliding> -->
   </ion-list>
 </ion-content>

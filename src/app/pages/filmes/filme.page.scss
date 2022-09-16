@@ -1,0 +1,22 @@
+ion-content {
+  h1{
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  p{
+    padding: 10px;
+    line-height: 1.5em;
+    font-size: 0.8rem;
+  }
+  h3{
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  ion-badge{
+    font-weight: 300;
+    font-size: 0.7rem;
+    margin-right: 3px;
+  }
+}
